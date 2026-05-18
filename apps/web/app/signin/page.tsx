@@ -18,8 +18,8 @@ export default function signup(){
             </div>
             <div>
                 <button onClick={async ()=>{
-                  const username=document.getElementById('username').value;
-                  const password=document.getElementById('password').value;
+                  const username = (document.getElementById('username') as  HTMLInputElement)?.value ?? '';
+                  const password = (document.getElementById('password') as HTMLInputElement)?.value ?? '';
                   const sending = await axios.post('http://localhost:3001/signin',{
                     username:username,
                     password:password

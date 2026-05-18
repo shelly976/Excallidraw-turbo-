@@ -38,7 +38,10 @@ export default function Room(){
                 <input id='joinroom' placeholder="Join Room"></input>
                 <button id="roomjoin" onClick={()=>{
                     async function l(){
-                    const romid=document.getElementById('joinroom').value;
+                    const inputElement = document.getElementById('joinroom') as HTMLInputElement;
+                    if(!inputElement){return;}
+                    const romid = inputElement?.value;
+                    if (!romid) return;
                     const findone=await axios.post('http://localhost:3001/join',{
                         roomid:romid,
                         token:token
