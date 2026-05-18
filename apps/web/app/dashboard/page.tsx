@@ -86,7 +86,12 @@ export default function Page() {
 
     async function initSocket() {
 
-      socketRef.current = new WebSocket('ws://localhost:8080');
+      const wsUrl = process.env.WS_URL;
+      if (!wsUrl) {
+        throw new Error('WebSocket URL is not defined');
+      }
+
+      socketRef.current = new WebSocket(wsUrl);
 
       socketRef.current.onmessage = (event) => {
 
@@ -105,7 +110,12 @@ export default function Page() {
 
       try {
 
-        const response = await axios.post('http://localhost:3001', {
+        const backendUrl = process.env.Backend_URL;
+        if (!backendUrl) {
+          throw new Error('Backend URL is not defined');
+        }
+
+        const response = await axios.post(backendUrl, {
           roomid: roomid,
         });
 

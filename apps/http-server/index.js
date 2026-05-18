@@ -1,9 +1,9 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import cors from 'cors';
 import Middleware from './middleware/index.js';
 import  jwt from 'jsonwebtoken'; 
-dotenv.config({path:'./../../.env'});
+import dotenv from "dotenv";
+dotenv.config();
 import {UserSchema,DataSchema} from '@repo/database';
 
 const app=express();
