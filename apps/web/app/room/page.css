@@ -1,0 +1,167 @@
+/* ===== Full Page ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* ===== Main Container ===== */
+
+#one {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+
+  background:
+    radial-gradient(circle at top left, #1a1a1a 0%, #000000 50%),
+    radial-gradient(circle at bottom right, #111111 0%, #000000 50%);
+}
+
+/* ===== Cards ===== */
+
+#one > div {
+  width: 340px;
+  min-height: 240px;
+
+  background: rgba(18, 18, 18, 0.95);
+
+  border: 1px solid #2d2d2d;
+  border-radius: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(255, 255, 255, 0.04);
+
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+
+#one > div:hover {
+  transform: translateY(-6px);
+
+  border-color: #555;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Input ===== */
+
+#joinroom {
+  width: 100%;
+  padding: 14px 18px;
+
+  background: #0d0d0d;
+  color: white;
+
+  border: 1px solid #333;
+  border-radius: 14px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  transition: all 0.3s ease;
+
+  margin-bottom: 25px;
+}
+
+/* Input Focus */
+
+#joinroom:focus {
+  border-color: #8b5cf6;
+
+  box-shadow:
+    0 0 12px rgba(139, 92, 246, 0.5);
+}
+
+/* Placeholder */
+
+#joinroom::placeholder {
+  color: #888;
+}
+
+/* ===== Buttons ===== */
+
+#roomjoin,
+#createroom {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  transition: all 0.3s ease;
+
+  color: white;
+}
+
+/* ===== Join Button ===== */
+
+#roomjoin {
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+
+  box-shadow:
+    0 6px 18px rgba(124, 58, 237, 0.4);
+}
+
+#roomjoin:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 10px 25px rgba(124, 58, 237, 0.6);
+}
+
+/* ===== Create Button ===== */
+
+#createroom {
+  background: linear-gradient(135deg, #059669, #10b981);
+
+  box-shadow:
+    0 6px 18px rgba(16, 185, 129, 0.35);
+}
+
+#createroom:hover {
+  transform: scale(1.03);
+
+  box-shadow:
+    0 10px 25px rgba(16, 185, 129, 0.5);
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 900px) {
+
+  #one {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  #one > div {
+    width: 90%;
+    max-width: 360px;
+  }
+}
